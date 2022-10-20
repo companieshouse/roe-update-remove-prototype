@@ -4,7 +4,7 @@
 
 module.exports = {
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: 'Service name goes here',
+  serviceName: 'ROE Phase 2',
 
   // Default port that prototype runs on
   port: '3000',
@@ -26,6 +26,11 @@ module.exports = {
   useHttps: 'true',
 
   // Enable or disable Browser Sync (local development only)
-  useBrowserSync: 'true'
+  //useBrowserSync: 'true'
+
+  // Enable or disable Browser Sync
+  useBrowserSync: 'true',
+  // Enable logging, options: true, false, get or post
+  useLogging: 'true'
 
 }

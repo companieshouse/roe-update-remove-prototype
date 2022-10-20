@@ -2,43 +2,172 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Update or remove a Register of Overseas Entity
+  {{ serviceName }} prototype
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Prototype your service using GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+      {{ govukPhaseBanner({
+        tag: {
+        text: "Prototype"
+        },
+        html: ''
+    }) }}
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+    <h1 class="govuk-heading-l govuk-!-padding-top-4">
+      {{ serviceName }}
+    </h1>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">
+      Prototypes
+    </h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Version</th>
+          <th class="govuk-table__header" scope="col">Sprint</th>
+          <th class="govuk-table__header" scope="col">Date</th>
+          <th class="govuk-table__header" scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v3/_index">V3</a>
+          </td>
+          <td class="govuk-table__cell">
+            { Sprint number }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v2/_index">V2</a>
+          </td>
+          <td class="govuk-table__cell">
+            { Sprint number }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--grey">
+              Complete
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="v1/_index">V1</a>
+          </td>
+          <td class="govuk-table__cell">
+            { Sprint number }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--grey">
+              Complete
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="/dev-stable">Dev / stable</a></li>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Stable
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+    {# ASSESSMENTS #}
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">
+      Assessments
+    </h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Phase</th>
+          <th class="govuk-table__header" scope="col">Date</th>
+          <th class="govuk-table__header" scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="#/">Alpha</a>
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Passed
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+    {# PLAYGROUND #}
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">
+      Playground
+    </h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Feature</th>
+          <th class="govuk-table__header" scope="col">Date</th>
+          <th class="govuk-table__header" scope="col">Link</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            { Feature name }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <a href="#/">View</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            { Feature name }
+          </td>
+          <td class="govuk-table__cell">
+            { Date }
+          </td>
+          <td class="govuk-table__cell">
+            <a href="#/">View</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
-    </div>
   </div>
+</div>
 
 {% endblock %}
