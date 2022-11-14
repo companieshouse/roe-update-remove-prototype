@@ -47,7 +47,7 @@
   {{ govukHeader({
     homepageUrl: "/",
     serviceName: serviceName,
-    serviceUrl: "/",
+    serviceUrl: "./index",
     containerClasses: "govuk-width-container"
   }) }}
 {% endblock %}
@@ -66,6 +66,10 @@
           {
             href: "/prototype-admin/clear-data",
             text: "Clear data"
+          },
+          {
+            href: "./_index",
+            text: "Prototype V2 index"
           }
         ],
         visuallyHiddenTitle: "Footer links"
