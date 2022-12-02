@@ -9,10 +9,9 @@ router.use('/v2/', (req, res, next) => {
 })
 
 // Import V1 routes
-// This has been commented out so as to avoid compilation errors as the v1/_routes file doesn't exist
-//router.use('/v1/', (req, res, next) => {
-//    return require(`./views/v1/_routes`)(req, res, next);
-//  })
+router.use('/v1/', (req, res, next) => {
+  return require(`./views/v1/_routes`)(req, res, next);
+})
 
 // SET GLOBAL PREVIOUS PAGE
 router.use('/', (req, res, next) => {

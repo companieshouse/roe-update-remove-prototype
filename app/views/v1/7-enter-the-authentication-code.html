@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+What is the name of the overseas entity?
+ – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{# {% include "includes/back-link.html" %}
+{% include "includes/user-bar.html" %} #}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form action="/form-handler" method="post" novalidate>
+
+
+{{ govukInput({
+  label: {
+    text: "Enter the authentication code",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  id: "overseas-name",
+  name: "overseas-name",
+  value: data["overseas-name"] 
+}) }}
+
+
+  <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+    <a class="govuk-link" href="#">Request an authentication code</a>
+  </div>
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}
